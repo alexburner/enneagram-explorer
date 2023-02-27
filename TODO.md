@@ -1,0 +1,8 @@
+- add more Selected Type content
+  - overview
+  - growth
+  - misidentify
+  - relationships
+  - levels
+- gapless/overlapping columns
+- add nav geometry
