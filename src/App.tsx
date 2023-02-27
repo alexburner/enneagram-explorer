@@ -1,12 +1,11 @@
-import { FC } from 'react'
-import { types } from './data'
+import { FC, useState } from 'react'
+import { Nav } from './components/Nav'
 
 export const App: FC = () => {
+  const [chosenNum, chooseNum] = useState<number>()
   return (
     <div>
-      {types.map((type) => (
-        <pre key={type.num}>{JSON.stringify(type.summary, null, 2)}</pre>
-      ))}
+      <Nav chosenNum={chosenNum} chooseNum={chooseNum} />
     </div>
   )
 }
