@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    // --> From npm create vite@latest
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
@@ -14,7 +15,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+
+    // --> Additional strictness
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedParameters": true,
+    "noErrorTruncation": true
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

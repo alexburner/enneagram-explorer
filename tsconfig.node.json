@@ -1,9 +1,19 @@
 {
   "compilerOptions": {
+    // --> From npm create vite@latest
     "composite": true,
     "module": "ESNext",
     "moduleResolution": "Node",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+
+    // --> Additional strictness
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedParameters": true,
+    "noErrorTruncation": true
   },
   "include": ["vite.config.ts"]
 }
