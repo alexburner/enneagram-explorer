@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import { useAtom } from 'jotai'
 import { FC } from 'react'
 import { currNumAtom } from '../atoms'
@@ -6,20 +7,27 @@ import { types } from '../data'
 export const Nav: FC = () => {
   const [currNum, setCurrNum] = useAtom(currNumAtom)
   return (
-    <div className="has-text-centered">
-      {types.map((type) => (
-        <span
-          key={type.name}
-          style={{
-            margin: '0 6px',
-            background: type.num === currNum ? 'yellow' : 'none',
-            cursor: 'pointer',
-          }}
-          onClick={() => setCurrNum(type.num)}
-        >
-          {type.num} — {type.name}
-        </span>
-      ))}
+    <div className="tabs is-centered">
+      <ul>
+        {types.map((type) => {
+          const isActive = type.num === currNum
+          return (
+            <li
+              key={type.name}
+              className={classNames({
+                'is-active': isActive,
+                'is-clickable': !isActive,
+                'has-text-weight-bold': isActive,
+              })}
+              onClick={() => setCurrNum(type.num)}
+            >
+              <a className="has-text-dark">
+                {type.num}: {type.name}
+              </a>
+            </li>
+          )
+        })}
+      </ul>
     </div>
   )
 }
