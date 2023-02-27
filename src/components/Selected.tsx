@@ -9,7 +9,7 @@ export const Selected: FC = () => {
   const type = types[currNum - 1]
   if (!type) throw new Error('Unreachable')
   return (
-    <div className="columns">
+    <div className="columns is-variable is-2">
       <div className="column">
         <div className="pt-3" />
         <div className="message is-info">
