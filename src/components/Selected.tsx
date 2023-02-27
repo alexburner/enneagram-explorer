@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import { useAtom } from 'jotai'
 import { FC } from 'react'
 import { currNumAtom } from '../atoms'
-import { types } from '../data'
+import { types } from '../data/types'
 
 export const Selected: FC = () => {
   const [currNum] = useAtom(currNumAtom)
@@ -150,7 +150,9 @@ const TypeDetails: FC<{ num: number }> = ({ num }) => {
   if (!type) throw new Error('Unreachable')
   return (
     <div className="content is-normal">
-      <h4>Recommendations</h4>
+      <h3>Overview</h3>
+      <div dangerouslySetInnerHTML={{ __html: type.detail.overviewHtml }} />
+      <h3>Recommendations</h3>
       <ul>
         {type.detail.recommendations.map((recommendation) => (
           <li key={recommendation}>{recommendation}</li>

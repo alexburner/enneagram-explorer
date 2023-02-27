@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import { useAtom } from 'jotai'
 import { FC } from 'react'
 import { currNumAtom } from '../atoms'
-import { types } from '../data'
+import { types } from '../data/types'
 
 export const Nav: FC = () => {
   const [currNum, setCurrNum] = useAtom(currNumAtom)
