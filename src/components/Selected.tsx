@@ -13,18 +13,22 @@ export const Selected: FC = () => {
       <div className="column">
         <div className="pb-3" />
         <div className="message is-info">
-          <div className="message-header is-justify-content-center">Wing</div>
+          <div className="message-header is-justify-content-center">
+            Wing {type.relations.wingL.num}
+          </div>
           <MessageBody
-            text={`${type.num}w${type.relations.wingL.num}:  The ${type.relations.wingL.description}`}
+            text={`${type.num}w${type.relations.wingL.num}: The ${type.relations.wingL.description}`}
           />
           <MessageContents>
             <TypeCard num={type.relations.wingL.num} />
           </MessageContents>
         </div>
         <div className="message is-danger">
-          <div className="message-header is-justify-content-center">Stress</div>
+          <div className="message-header is-justify-content-center">
+            Stress → {type.relations.stress.num}
+          </div>
           <MessageBody
-            text={`Moving in their Direction of Disintegration — ${type.relations.stress.description}.`}
+            text={`Moving in their Direction of Disintegration → ${type.relations.stress.description}.`}
           />
           <MessageContents>
             <TypeCard num={type.relations.stress.num} />
@@ -33,7 +37,9 @@ export const Selected: FC = () => {
       </div>
       <div className="column is-two-fifths">
         <div className="message is-dark is-medium">
-          <div className="message-header is-justify-content-center">Type</div>
+          <div className="message-header is-justify-content-center">
+            Type {type.num}
+          </div>
           <div className="p-2">
             <MessageContents>
               <TypeCard num={type.num} />
@@ -46,18 +52,22 @@ export const Selected: FC = () => {
       <div className="column">
         <div className="pb-3" />
         <div className="message is-info">
-          <div className="message-header is-justify-content-center">Wing</div>
+          <div className="message-header is-justify-content-center">
+            Wing {type.relations.wingR.num}
+          </div>
           <MessageBody
-            text={`${type.num}w${type.relations.wingR.num}:  The ${type.relations.wingR.description}`}
+            text={`${type.num}w${type.relations.wingR.num}: The ${type.relations.wingR.description}`}
           />
           <MessageContents>
             <TypeCard num={type.relations.wingR.num} />
           </MessageContents>
         </div>
         <div className="message is-success">
-          <div className="message-header is-justify-content-center">Growth</div>
+          <div className="message-header is-justify-content-center">
+            Growth → {type.relations.growth.num}
+          </div>
           <MessageBody
-            text={`Moving in their Direction of Integration — ${type.relations.growth.description}.`}
+            text={`Moving in their Direction of Integration → ${type.relations.growth.description}.`}
           />
           <MessageContents>
             <TypeCard num={type.relations.growth.num} />
