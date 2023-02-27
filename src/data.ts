@@ -239,7 +239,7 @@ export const types: Type[] = [
       },
       growth: {
         description:
-          'fearful, pessimistic Sixes become more relaxed and optimistic, like healthy Nine',
+          'fearful, pessimistic Sixes become more relaxed and optimistic, like healthy Nines',
         num: 9,
       },
     },
