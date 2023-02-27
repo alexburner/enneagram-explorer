@@ -1,8 +1,9 @@
 - add more Selected Type content
   - overview
-  - growth
+  - X recommendations
   - misidentify
   - relationships
+  - addictions?
   - levels
-- gapless/overlapping columns
+- gapless/overlapping columns?
 - add nav geometry
