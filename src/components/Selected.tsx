@@ -11,45 +11,57 @@ export const Selected: FC = () => {
   return (
     <div className="columns is-variable is-2">
       <div className="column">
-        <div className="pt-3" />
+        <div className="pb-3" />
         <div className="message is-info">
           <div className="message-header is-justify-content-center">Wing</div>
           <MessageBody
             text={`${type.num}w${type.relations.wingL.num}:  The ${type.relations.wingL.description}`}
           />
-          <TypeCard num={type.relations.wingL.num} />
+          <MessageContents>
+            <TypeCard num={type.relations.wingL.num} />
+          </MessageContents>
         </div>
         <div className="message is-danger">
           <div className="message-header is-justify-content-center">Stress</div>
           <MessageBody
             text={`Moving in their Direction of Disintegration — ${type.relations.stress.description}.`}
           />
-          <TypeCard num={type.relations.stress.num} />
+          <MessageContents>
+            <TypeCard num={type.relations.stress.num} />
+          </MessageContents>
         </div>
       </div>
       <div className="column is-two-fifths">
         <div className="message is-dark is-medium">
           <div className="message-header is-justify-content-center">Type</div>
           <div className="p-2">
-            <TypeCard num={type.num} />
+            <MessageContents>
+              <TypeCard num={type.num} />
+              <div className="pb-3" />
+              <TypeDetails num={type.num} />
+            </MessageContents>
           </div>
         </div>
       </div>
       <div className="column">
-        <div className="pt-3" />
+        <div className="pb-3" />
         <div className="message is-info">
           <div className="message-header is-justify-content-center">Wing</div>
           <MessageBody
             text={`${type.num}w${type.relations.wingR.num}:  The ${type.relations.wingR.description}`}
           />
-          <TypeCard num={type.relations.wingR.num} />
+          <MessageContents>
+            <TypeCard num={type.relations.wingR.num} />
+          </MessageContents>
         </div>
         <div className="message is-success">
           <div className="message-header is-justify-content-center">Growth</div>
           <MessageBody
             text={`Moving in their Direction of Integration — ${type.relations.growth.description}.`}
           />
-          <TypeCard num={type.relations.growth.num} />
+          <MessageContents>
+            <TypeCard num={type.relations.growth.num} />
+          </MessageContents>
         </div>
       </div>
     </div>
@@ -72,12 +84,16 @@ const MessageBody: FC<{ text: string }> = ({ text }) => (
   </div>
 )
 
+const MessageContents: FC<{
+  children: React.ReactNode
+}> = ({ children }) => <div className="pt-4 px-5 pb-6">{children}</div>
+
 const TypeCard: FC<{ num: number }> = ({ num }) => {
   const type = types[num - 1]
   if (!type) throw new Error('Unreachable')
   const [currNum, setCurrNum] = useAtom(currNumAtom)
   return (
-    <div className="p-5 pb-6 content">
+    <div className="content">
       <h3
         className={classNames({
           'is-clickable': type.num !== currNum,
@@ -103,17 +119,32 @@ const TypeCard: FC<{ num: number }> = ({ num }) => {
           {type.summary.desire}.
         </li>
         <li>
-          <strong>At their best: </strong>
-          {type.summary.best}
-        </li>
-        <li>
           <strong>Problems with: </strong>
           {type.summary.problems}
+        </li>
+        <li>
+          <strong>At their best: </strong>
+          {type.summary.best}
         </li>
         <li>
           <strong>Key Motivation: </strong>
           {type.summary.motivation}
         </li>
+      </ul>
+    </div>
+  )
+}
+
+const TypeDetails: FC<{ num: number }> = ({ num }) => {
+  const type = types[num - 1]
+  if (!type) throw new Error('Unreachable')
+  return (
+    <div className="content is-normal">
+      <h4>Recommendations</h4>
+      <ul>
+        {type.detail.recommendations.map((recommendation) => (
+          <li key={recommendation}>{recommendation}</li>
+        ))}
       </ul>
     </div>
   )
