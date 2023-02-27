@@ -9,7 +9,7 @@ interface TypeSummary {
 
 interface TypeRelation {
   description: string
-  targetNum: number
+  num: number
 }
 
 interface Type {
@@ -41,20 +41,20 @@ export const types: Type[] = [
     relations: {
       wingL: {
         description: 'Idealist',
-        targetNum: 9,
+        num: 9,
       },
       wingR: {
         description: 'Advocate',
-        targetNum: 2,
+        num: 2,
       },
       stress: {
         description: 'methodical Ones become moody and irrational at Four',
-        targetNum: 4,
+        num: 4,
       },
       growth: {
         description:
           'angry, critical Ones become more spontaneous and joyful, like healthy Sevens',
-        targetNum: 7,
+        num: 7,
       },
     },
   },
@@ -74,20 +74,20 @@ export const types: Type[] = [
     relations: {
       wingL: {
         description: 'Servant',
-        targetNum: 1,
+        num: 1,
       },
       wingR: {
         description: 'Host/Hostess',
-        targetNum: 3,
+        num: 3,
       },
       stress: {
         description: 'needy Twos become aggressive and dominating at Eight',
-        targetNum: 8,
+        num: 8,
       },
       growth: {
         description:
           'prideful, self-deceptive Twos become more self-nurturing and emotionally aware, like healthy Fours',
-        targetNum: 4,
+        num: 4,
       },
     },
   },
@@ -107,20 +107,20 @@ export const types: Type[] = [
     relations: {
       wingL: {
         description: 'Charmer',
-        targetNum: 2,
+        num: 2,
       },
       wingR: {
         description: 'Professional',
-        targetNum: 4,
+        num: 4,
       },
       stress: {
         description: 'driven Threes become disengaged and apathetic at Nine',
-        targetNum: 4,
+        num: 4,
       },
       growth: {
         description:
           'vain, deceitful Threes become more cooperative and committed to others, like healthy Sixes',
-        targetNum: 7,
+        num: 7,
       },
     },
   },
@@ -141,20 +141,20 @@ export const types: Type[] = [
     relations: {
       wingL: {
         description: 'Aristocrat',
-        targetNum: 3,
+        num: 3,
       },
       wingR: {
         description: 'Bohemian',
-        targetNum: 5,
+        num: 5,
       },
       stress: {
         description: 'aloof Fours become over-involved and clinging at Two',
-        targetNum: 4,
+        num: 4,
       },
       growth: {
         description:
           'envious, emotionally turbulent Fours become more objective and principled, like healthy Ones',
-        targetNum: 7,
+        num: 7,
       },
     },
   },
@@ -174,20 +174,20 @@ export const types: Type[] = [
     relations: {
       wingL: {
         description: 'Iconoclast',
-        targetNum: 4,
+        num: 4,
       },
       wingR: {
         description: 'Problem Solver',
-        targetNum: 6,
+        num: 6,
       },
       stress: {
         description: 'detached Fives become hyperactive and scattered at Seven',
-        targetNum: 4,
+        num: 4,
       },
       growth: {
         description:
           'avaricious, detached Fives become more self-confident and decisive, like healthy Eights',
-        targetNum: 7,
+        num: 7,
       },
     },
   },
@@ -207,21 +207,21 @@ export const types: Type[] = [
     relations: {
       wingL: {
         description: 'Defender',
-        targetNum: 5,
+        num: 5,
       },
       wingR: {
         description: 'Buddy',
-        targetNum: 7,
+        num: 7,
       },
       stress: {
         description:
           'dutiful Sixes suddenly become competitive and arrogant at Three',
-        targetNum: 3,
+        num: 3,
       },
       growth: {
         description:
           'fearful, pessimistic Sixes become more relaxed and optimistic, like healthy Nine',
-        targetNum: 9,
+        num: 9,
       },
     },
   },
@@ -241,21 +241,21 @@ export const types: Type[] = [
     relations: {
       wingL: {
         description: 'Entertainer',
-        targetNum: 6,
+        num: 6,
       },
       wingR: {
         description: 'Realist',
-        targetNum: 8,
+        num: 8,
       },
       stress: {
         description:
           'scattered Sevens suddenly become perfectionistic and critical at One',
-        targetNum: 1,
+        num: 1,
       },
       growth: {
         description:
           'gluttonous, scattered Sevens become more focused and fascinated by life, like healthy Fives',
-        targetNum: 5,
+        num: 5,
       },
     },
   },
@@ -276,21 +276,21 @@ export const types: Type[] = [
     relations: {
       wingL: {
         description: 'Maverick',
-        targetNum: 7,
+        num: 7,
       },
       wingR: {
         description: 'Bear',
-        targetNum: 9,
+        num: 9,
       },
       stress: {
         description:
           'self-confident Eights become secretive and fearful at Five',
-        targetNum: 5,
+        num: 5,
       },
       growth: {
         description:
           'lustful, controlling Eights become more open-hearted and caring, like healthy Twos',
-        targetNum: 2,
+        num: 2,
       },
     },
   },
@@ -310,20 +310,20 @@ export const types: Type[] = [
     relations: {
       wingL: {
         description: 'Referee',
-        targetNum: 8,
+        num: 8,
       },
       wingR: {
         description: 'Dreamer',
-        targetNum: 1,
+        num: 1,
       },
       stress: {
         description: 'complacent Nines become anxious and worried at Six',
-        targetNum: 6,
+        num: 6,
       },
       growth: {
         description:
           'slothful, self-neglecting Nines become more self-developing and energetic, like healthy Threes',
-        targetNum: 3,
+        num: 3,
       },
     },
   },
