@@ -1,3 +1,3 @@
 import { atom } from 'jotai'
 
-export const currNumAtom = atom<number | undefined>(undefined)
+export const currNumAtom = atom<number>(5)

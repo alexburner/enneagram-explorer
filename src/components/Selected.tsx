@@ -6,7 +6,6 @@ import { types } from '../data'
 
 export const Selected: FC = () => {
   const [currNum] = useAtom(currNumAtom)
-  if (!currNum) return null
   const type = types[currNum - 1]
   if (!type) throw new Error('Unreachable')
   return (
