@@ -1,10 +1,10 @@
+import { useAtom } from 'jotai'
 import { FC } from 'react'
+import { currNumAtom } from '../atoms'
 import { types } from '../data'
 
-export const Nav: FC<{
-  chosenNum: number | undefined
-  chooseNum: (num: number) => void
-}> = ({ chosenNum, chooseNum }) => {
+export const Nav: FC = () => {
+  const [currNum, setCurrNum] = useAtom(currNumAtom)
   return (
     <div style={{ textAlign: 'center' }}>
       {types.map((type) => (
@@ -12,10 +12,10 @@ export const Nav: FC<{
           key={type.name}
           style={{
             margin: '0 6px',
-            background: chosenNum === type.num ? 'yellow' : 'none',
+            background: type.num === currNum ? 'yellow' : 'none',
             cursor: 'pointer',
           }}
-          onClick={() => chooseNum(type.num)}
+          onClick={() => setCurrNum(type.num)}
         >
           {type.num} — {type.name}
         </span>
