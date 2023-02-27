@@ -198,7 +198,7 @@ export const types: Type[] = [
       subtitle1: 'The Committed, Security-Oriented Type',
       subtitle2: 'Engaging, Responsible, Anxious, and Suspicious',
       description:
-        'The committed, security-oriented type. Sixes are reliable, hard-working, responsible, and trustworthy. Excellent "troubleshooters," they foresee problems and foster cooperation, but can also become defensive, evasive, and anxious—running on stress while complaining about it. They can be cautious and indecisive, but also reactive, defiant and rebellious. They typically have problems with self-doubt and suspicion. At their Best: internally stable and self-reliant, courageously championing themselves and others.',
+        'Sixes are reliable, hard-working, responsible, and trustworthy. Excellent "troubleshooters," they foresee problems and foster cooperation, but can also become defensive, evasive, and anxious—running on stress while complaining about it. They can be cautious and indecisive, but also reactive, defiant and rebellious. They typically have problems with self-doubt and suspicion. At their Best: internally stable and self-reliant, courageously championing themselves and others.',
       fear: 'Of being without support and guidance',
       desire: 'To have security and support',
       motivation:
@@ -214,8 +214,7 @@ export const types: Type[] = [
         num: 7,
       },
       stress: {
-        description:
-          'dutiful Sixes suddenly become competitive and arrogant at Three',
+        description: 'dutiful Sixes become competitive and arrogant at Three',
         num: 3,
       },
       growth: {
@@ -249,7 +248,7 @@ export const types: Type[] = [
       },
       stress: {
         description:
-          'scattered Sevens suddenly become perfectionistic and critical at One',
+          'scattered Sevens become perfectionistic and critical at One',
         num: 1,
       },
       growth: {

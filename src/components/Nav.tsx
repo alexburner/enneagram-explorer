@@ -6,7 +6,7 @@ import { types } from '../data'
 export const Nav: FC = () => {
   const [currNum, setCurrNum] = useAtom(currNumAtom)
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div className="has-text-centered">
       {types.map((type) => (
         <span
           key={type.name}
