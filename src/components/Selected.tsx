@@ -11,7 +11,7 @@ export const Selected: FC = () => {
   return (
     <div className="columns is-variable is-2">
       <div className="column">
-        <div className="pb-3" />
+        <div className="pb-4" />
         <div className="message is-info">
           <div className="message-header is-justify-content-center">
             Wing {type.relations.wingL.num}
@@ -36,7 +36,7 @@ export const Selected: FC = () => {
         </div>
       </div>
       <div className="column is-two-fifths">
-        <div className="message is-dark is-medium">
+        <div className="message is-dark">
           <div className="message-header is-justify-content-center">
             Type {type.num}
           </div>
@@ -50,7 +50,7 @@ export const Selected: FC = () => {
         </div>
       </div>
       <div className="column">
-        <div className="pb-3" />
+        <div className="pb-4" />
         <div className="message is-info">
           <div className="message-header is-justify-content-center">
             Wing {type.relations.wingR.num}
@@ -150,9 +150,12 @@ const TypeDetails: FC<{ num: number }> = ({ num }) => {
   if (!type) throw new Error('Unreachable')
   return (
     <div className="content is-normal">
-      <h3>Overview</h3>
-      <div dangerouslySetInnerHTML={{ __html: type.detail.overviewHtml }} />
-      <h3>Recommendations</h3>
+      <h4>Overview</h4>
+      <div
+        className="pb-5"
+        dangerouslySetInnerHTML={{ __html: type.detail.overviewHtml }}
+      />
+      <h4>Recommendations</h4>
       <ul>
         {type.detail.recommendations.map((recommendation) => (
           <li key={recommendation}>{recommendation}</li>
