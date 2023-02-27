@@ -14,4 +14,8 @@ export default defineConfig({
       },
     }),
   ],
+  // For github pages
+  // -> https://vitejs.dev/guide/static-deploy.html#github-pages
+  base: '/enneagram-viewer/',
+  build: { outDir: 'docs' },
 })
