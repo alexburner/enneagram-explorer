@@ -10,7 +10,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prettier": "prettier --write .",
+    "eslint": "eslint --ext .ts,.tsx --fix .",
+    "tsc": "tsc --noEmit",
+    "fix": "npm run eslint && npm run prettier && npm run tsc"
   },
   "dependencies": {
     "react": "18.2.0",
