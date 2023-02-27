@@ -59,12 +59,12 @@ export const Selected: FC = () => {
 const MessageBody: FC<{ text: string }> = ({ text }) => (
   <div className="message-body pb-0">
     <div
-      className="pl-2"
+      className="pl-3 ml-1"
       style={{
         borderColor: 'inherit',
         borderLeftStyle: 'solid',
         borderLeftWidth: '0.2rem',
-        opacity: 0.9,
+        opacity: 0.85,
       }}
     >
       {text}
