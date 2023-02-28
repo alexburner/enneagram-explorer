@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import { useAtom } from 'jotai'
 import { FC } from 'react'
 import { currNumAtom } from '../atoms'
@@ -8,16 +7,18 @@ export const TypeSummary: FC<{ num: number }> = ({ num }) => {
   const type = types[num - 1]
   if (!type) throw new Error('Unreachable')
   const [currNum, setCurrNum] = useAtom(currNumAtom)
+  const isCurrent = type.num === currNum
   return (
     <div className="content">
-      <h3
-        className={classNames({
-          'is-clickable': type.num !== currNum,
-        })}
-        onClick={() => setCurrNum(type.num)}
-      >
-        {type.num}: The {type.name}
-      </h3>
+      {isCurrent ? (
+        <h2>
+          {type.num}: The {type.name}
+        </h2>
+      ) : (
+        <h3 className="is-clickable" onClick={() => setCurrNum(type.num)}>
+          {type.num}: The {type.name}
+        </h3>
+      )}
       <p>
         <strong>The {type.summary.subtitle1} Type</strong>
         <br />
