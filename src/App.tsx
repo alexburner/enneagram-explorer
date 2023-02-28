@@ -1,6 +1,6 @@
 import { FC } from 'react'
+import { Current } from './components/Current'
 import { Nav } from './components/Nav'
-import { Selected } from './components/Selected'
 
 export const App: FC = () => (
   <div className="mx-auto pt-1 px-5 pb-6" style={{ maxWidth: '2000px' }}>
@@ -8,7 +8,7 @@ export const App: FC = () => (
       <Nav />
     </div>
     <div className="pb-6">
-      <Selected />
+      <Current />
     </div>
   </div>
 )

@@ -1,10 +1,11 @@
-import classNames from 'classnames'
 import { useAtom } from 'jotai'
 import { FC } from 'react'
 import { currNumAtom } from '../atoms'
 import { types } from '../data/types'
+import { TypeDetails } from './TypeDetails'
+import { TypeSummary } from './TypeSummary'
 
-export const Selected: FC = () => {
+export const Current: FC = () => {
   const [currNum] = useAtom(currNumAtom)
   const type = types[currNum - 1]
   if (!type) throw new Error('Unreachable')
@@ -20,7 +21,7 @@ export const Selected: FC = () => {
             text={`${type.num}w${type.relations.wingL.num}: The ${type.relations.wingL.description}`}
           />
           <MessageContents>
-            <TypeCard num={type.relations.wingL.num} />
+            <TypeSummary num={type.relations.wingL.num} />
           </MessageContents>
         </div>
         <div className="message is-danger">
@@ -31,7 +32,7 @@ export const Selected: FC = () => {
             text={`Moving in their Direction of Disintegration → ${type.relations.stress.description}.`}
           />
           <MessageContents>
-            <TypeCard num={type.relations.stress.num} />
+            <TypeSummary num={type.relations.stress.num} />
           </MessageContents>
         </div>
       </div>
@@ -42,7 +43,7 @@ export const Selected: FC = () => {
           </div>
           <div className="p-2">
             <MessageContents>
-              <TypeCard num={type.num} />
+              <TypeSummary num={type.num} />
               <div className="pb-3" />
               <TypeDetails num={type.num} />
             </MessageContents>
@@ -59,7 +60,7 @@ export const Selected: FC = () => {
             text={`${type.num}w${type.relations.wingR.num}: The ${type.relations.wingR.description}`}
           />
           <MessageContents>
-            <TypeCard num={type.relations.wingR.num} />
+            <TypeSummary num={type.relations.wingR.num} />
           </MessageContents>
         </div>
         <div className="message is-success">
@@ -70,7 +71,7 @@ export const Selected: FC = () => {
             text={`Moving in their Direction of Integration → ${type.relations.growth.description}.`}
           />
           <MessageContents>
-            <TypeCard num={type.relations.growth.num} />
+            <TypeSummary num={type.relations.growth.num} />
           </MessageContents>
         </div>
       </div>
@@ -97,70 +98,3 @@ const MessageBody: FC<{ text: string }> = ({ text }) => (
 const MessageContents: FC<{
   children: React.ReactNode
 }> = ({ children }) => <div className="pt-4 px-5 pb-6">{children}</div>
-
-const TypeCard: FC<{ num: number }> = ({ num }) => {
-  const type = types[num - 1]
-  if (!type) throw new Error('Unreachable')
-  const [currNum, setCurrNum] = useAtom(currNumAtom)
-  return (
-    <div className="content">
-      <h3
-        className={classNames({
-          'is-clickable': type.num !== currNum,
-        })}
-        onClick={() => setCurrNum(type.num)}
-      >
-        {type.num}: The {type.name}
-      </h3>
-      <p>
-        <strong>The {type.summary.subtitle1} Type</strong>
-        <br />
-        <em>{type.summary.subtitle2}</em>
-        <br />
-      </p>
-      <div>{type.summary.description}</div>
-      <ul>
-        <li>
-          <strong>Fear: </strong>
-          {type.summary.fear}.
-        </li>
-        <li>
-          <strong>Desire: </strong>
-          {type.summary.desire}.
-        </li>
-        <li>
-          <strong>Problems with: </strong>
-          {type.summary.problems}
-        </li>
-        <li>
-          <strong>At their best: </strong>
-          {type.summary.best}
-        </li>
-        <li>
-          <strong>Key Motivation: </strong>
-          {type.summary.motivation}
-        </li>
-      </ul>
-    </div>
-  )
-}
-
-const TypeDetails: FC<{ num: number }> = ({ num }) => {
-  const type = types[num - 1]
-  if (!type) throw new Error('Unreachable')
-  return (
-    <div className="content is-normal">
-      <h4>Overview</h4>
-      <div
-        className="pb-5"
-        dangerouslySetInnerHTML={{ __html: type.detail.overviewHtml }}
-      />
-      <h4>Recommendations</h4>
-      <ul>
-        {type.detail.recommendations.map((recommendation) => (
-          <li key={recommendation}>{recommendation}</li>
-        ))}
-      </ul>
-    </div>
-  )
-}
