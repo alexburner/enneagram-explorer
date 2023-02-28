@@ -4,9 +4,9 @@ import { currNumAtom } from '../atoms'
 import { types } from '../data/types'
 import { createDiagramLines, createDiagramPoints } from '../util/geometry'
 
-const WIDTH = 440
-const HEIGHT = 280
-const RADIUS = 80
+const WIDTH = 500
+const HEIGHT = 320
+const RADIUS = 90
 
 const CENTER_X = WIDTH / 2
 const CENTER_Y = HEIGHT / 2
@@ -134,8 +134,8 @@ export const Diagram: FC = () => {
           let anchor = 'start'
           switch (type.name) {
             case 'Reformer': {
-              x += fontShift * 0.5
-              y -= fontShift * 0.5
+              x += fontShift * 0.6
+              y -= fontShift * 0.4
               break
             }
             case 'Helper': {
@@ -144,24 +144,24 @@ export const Diagram: FC = () => {
               break
             }
             case 'Achiever': {
-              x += fontShift * 0.75
-              y += fontShift * 0.75
+              x += fontShift * 0.9
+              y += fontShift * 0.5
               break
             }
             case 'Individualist': {
-              x += fontShift * 0.1
-              y += fontShift * 1.4
+              x += fontShift * 0.0
+              y += fontShift * 1.5
               break
             }
             case 'Investigator': {
-              x -= fontShift * 0.1
-              y += fontShift * 1.4
+              x -= fontShift * 0.0
+              y += fontShift * 1.5
               anchor = 'end'
               break
             }
             case 'Loyalist': {
-              x -= fontShift * 0.75
-              y += fontShift * 0.75
+              x -= fontShift * 0.9
+              y += fontShift * 0.5
               anchor = 'end'
               break
             }
@@ -172,13 +172,13 @@ export const Diagram: FC = () => {
               break
             }
             case 'Challenger': {
-              x -= fontShift * 0.5
-              y -= fontShift * 0.5
+              x -= fontShift * 0.6
+              y -= fontShift * 0.4
               anchor = 'end'
               break
             }
             case 'Peacemaker': {
-              y -= fontShift * 1.0
+              y -= fontShift * 1.1
               anchor = 'middle'
               break
             }
