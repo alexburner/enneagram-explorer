@@ -1,6 +1,6 @@
-# `enneagram-viewer`
+# `enneagram-explorer`
 
-Interactive Enneagram type viewer
+Interactive Enneagram type explorer
 
 ## Development
 
