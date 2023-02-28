@@ -10,6 +10,7 @@ interface TypeSummary {
 }
 
 interface TypeRelation {
+  title?: string
   description: string
   num: number
 }
@@ -49,11 +50,13 @@ export const types: Type[] = [
     },
     relations: {
       wingL: {
-        description: 'Idealist',
+        title: 'Idealist',
+        description: 'Type Nine makes Ones more introverted and relaxed.',
         num: 9,
       },
       wingR: {
-        description: 'Advocate',
+        title: 'Advocate',
+        description: 'Type Two makes Ones more extroverted and empathetic.',
         num: 2,
       },
       stress: {
@@ -97,11 +100,14 @@ export const types: Type[] = [
     },
     relations: {
       wingL: {
-        description: 'Servant',
+        title: 'Servant',
+        description:
+          'Type One makes Twos more dutiful and better at setting boundaries.',
         num: 1,
       },
       wingR: {
-        description: 'Host/ess',
+        title: 'Host/ess',
+        description: 'Type Three makes Twos more confident and ambitious.',
         num: 3,
       },
       stress: {
@@ -145,11 +151,14 @@ export const types: Type[] = [
     },
     relations: {
       wingL: {
-        description: 'Charmer',
+        title: 'Charmer',
+        description: 'Type Two makes Threes more people-oriented and generous.',
         num: 2,
       },
       wingR: {
-        description: 'Professional',
+        title: 'Professional',
+        description:
+          'Type Fours makes Threes more genuine and focused on their craft.',
         num: 4,
       },
       stress: {
@@ -194,11 +203,13 @@ export const types: Type[] = [
     },
     relations: {
       wingL: {
-        description: 'Aristocrat',
+        title: 'Aristocrat',
+        description: 'Type Three makes Fours more outgoing and efficient.',
         num: 3,
       },
       wingR: {
-        description: 'Bohemian',
+        title: 'Bohemian',
+        description: 'Type Five makes Fours more detached and logical.',
         num: 5,
       },
       stress: {
@@ -242,11 +253,15 @@ export const types: Type[] = [
     },
     relations: {
       wingL: {
-        description: 'Iconoclast',
+        title: 'Iconoclast',
+        description:
+          'Type Four gives Fives better access to their emotions and their creativity.',
         num: 4,
       },
       wingR: {
-        description: 'Problem Solver',
+        title: 'Problem Solver',
+        description:
+          'Type Six gives Fives greater persistence and makes them more social.',
         num: 6,
       },
       stress: {
@@ -290,11 +305,14 @@ export const types: Type[] = [
     },
     relations: {
       wingL: {
-        description: 'Defender',
+        title: 'Defender',
+        description: 'Type Five makes Sixes more analytical and introverted.',
         num: 5,
       },
       wingR: {
-        description: 'Buddy',
+        title: 'Buddy',
+        description:
+          'Type Seven makes Sixes more risk-friendly and extroverted.',
         num: 7,
       },
       stress: {
@@ -337,11 +355,14 @@ export const types: Type[] = [
     },
     relations: {
       wingL: {
-        description: 'Entertainer',
+        title: 'Entertainer',
+        description:
+          'Type Six makes Sevens more responsible and focused on others.',
         num: 6,
       },
       wingR: {
-        description: 'Realist',
+        title: 'Realist',
+        description: 'Type Eight makes Sevens more assertive and driven.',
         num: 8,
       },
       stress: {
@@ -385,11 +406,13 @@ export const types: Type[] = [
     },
     relations: {
       wingL: {
-        description: 'Maverick',
+        title: 'Maverick',
+        description: 'Type Seven makes Eights more light-hearted and outgoing.',
         num: 7,
       },
       wingR: {
-        description: 'Bear',
+        title: 'Bear',
+        description: 'Type Nine makes Eights more relaxed and compassionate.',
         num: 9,
       },
       stress: {
@@ -432,11 +455,13 @@ export const types: Type[] = [
     },
     relations: {
       wingL: {
-        description: 'Referee',
+        title: 'Referee',
+        description: 'Type Eight makes Nines more energetic and confident.',
         num: 8,
       },
       wingR: {
-        description: 'Dreamer',
+        title: 'Dreamer',
+        description: 'Type One makes Nines more idealistic and disciplined.',
         num: 1,
       },
       stress: {

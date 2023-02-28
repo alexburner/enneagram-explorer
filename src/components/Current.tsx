@@ -19,9 +19,7 @@ export const Current: FC = () => {
           <div className="message-header is-justify-content-center">
             Wing {type.relations.wingL.num}
           </div>
-          <MessageBody
-            text={`${type.num}w${type.relations.wingL.num}: The ${type.relations.wingL.description}`}
-          />
+          <MessageBody text={type.relations.wingL.description} />
           <MessageContents>
             <TypeSummary num={type.relations.wingL.num} />
           </MessageContents>
@@ -39,7 +37,7 @@ export const Current: FC = () => {
         </div>
         <div className="message">
           <div className="message-header is-justify-content-center">
-            Mistyping for {type.num}
+            Mistypings for {type.num}
           </div>
           <div className="pt-0 px-5 pb-6">
             <TypeMisidentities num={type.num} />
@@ -66,9 +64,7 @@ export const Current: FC = () => {
           <div className="message-header is-justify-content-center">
             Wing {type.relations.wingR.num}
           </div>
-          <MessageBody
-            text={`${type.num}w${type.relations.wingR.num}: The ${type.relations.wingR.description}`}
-          />
+          <MessageBody text={type.relations.wingR.description} />
           <MessageContents>
             <TypeSummary num={type.relations.wingR.num} />
           </MessageContents>
