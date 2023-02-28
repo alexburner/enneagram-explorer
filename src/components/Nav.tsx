@@ -16,7 +16,6 @@ export const Nav: FC = () => {
               key={type.name}
               className={classNames({
                 'is-active': isActive,
-                'is-clickable': !isActive,
                 'has-text-weight-bold': isActive,
               })}
               onClick={() => setCurrNum(type.num)}

@@ -3,6 +3,7 @@ import { FC } from 'react'
 import { currNumAtom } from '../atoms'
 import { types } from '../data/types'
 import { TypeDetails } from './TypeDetails'
+import { TypeMisidentities } from './TypeMisidentities'
 import { TypeSummary } from './TypeSummary'
 
 export const Current: FC = () => {
@@ -34,6 +35,14 @@ export const Current: FC = () => {
           <MessageContents>
             <TypeSummary num={type.relations.stress.num} />
           </MessageContents>
+        </div>
+        <div className="message">
+          <div className="message-header is-justify-content-center">
+            Mistyping with {type.num}
+          </div>
+          <div className="pt-0 px-5 pb-6">
+            <TypeMisidentities num={type.num} />
+          </div>
         </div>
       </div>
       <div className="column is-two-fifths">
