@@ -1,25 +1,22 @@
 import classNames from 'classnames'
 import { FC, useEffect, useMemo, useState } from 'react'
-import { misidentities } from '../data/misidentities'
+import { relationships } from '../data/relationships'
 import { types } from '../data/types'
 import { isKeyOf } from '../util/ts'
 
-const allNums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+const otherNums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-export const TypeMisidentities: FC<{ num: number }> = ({ num }) => {
-  const otherNums = useMemo(
-    () => allNums.filter((otherNum) => otherNum !== num),
-    [num],
-  )
+export const TypeRelationships: FC<{ num: number }> = ({ num }) => {
+  const [activeNum, setActiveNum] = useState(1)
+  useEffect(() => setActiveNum(1), [num])
 
-  const [activeNum, setActiveNum] = useState(otherNums[0] ?? 0)
-  useEffect(() => setActiveNum(otherNums[0] ?? 0), [otherNums])
-
-  const misidentity = useMemo(() => {
+  const relationship = useMemo(() => {
     const min = Math.min(num, activeNum)
     const max = Math.max(num, activeNum)
     const key = `${min},${max}`
-    return isKeyOf(key, misidentities) ? misidentities[key] : `Bad key "${key}"`
+    return isKeyOf(key, relationships)
+      ? relationships[key]
+      : { brings: `Bad key "${key}"`, trouble: `Bad key "${key}"` }
   }, [num, activeNum])
 
   const type = types[num - 1]
@@ -51,7 +48,10 @@ export const TypeMisidentities: FC<{ num: number }> = ({ num }) => {
         <h4 className="has-text-centered">
           The {type.name} & The {otherType.name}
         </h4>
-        <div dangerouslySetInnerHTML={{ __html: misidentity }} />
+        <h6 className="pt-4">What each brings to the relationship</h6>
+        <div dangerouslySetInnerHTML={{ __html: relationship.brings }} />
+        <h6 className="pt-5">Potential trouble spots or issues</h6>
+        <div dangerouslySetInnerHTML={{ __html: relationship.trouble }} />
       </div>
     </div>
   )

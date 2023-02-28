@@ -2,10 +2,11 @@
 
   - overview
   - X recommendations
-  - misidentify
-  - relationships
+  - X misidentify
+  - X relationships
   - addictions?
   - levels
+  - wing descriptions
 
 - gapless/overlapping columns?
 

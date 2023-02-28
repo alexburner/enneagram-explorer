@@ -4,6 +4,7 @@ import { currNumAtom } from '../atoms'
 import { types } from '../data/types'
 import { TypeDetails } from './TypeDetails'
 import { TypeMisidentities } from './TypeMisidentities'
+import { TypeRelationships } from './TypeRelationships'
 import { TypeSummary } from './TypeSummary'
 
 export const Current: FC = () => {
@@ -38,7 +39,7 @@ export const Current: FC = () => {
         </div>
         <div className="message">
           <div className="message-header is-justify-content-center">
-            Mistyping with {type.num}
+            Mistyping for {type.num}
           </div>
           <div className="pt-0 px-5 pb-6">
             <TypeMisidentities num={type.num} />
@@ -82,6 +83,14 @@ export const Current: FC = () => {
           <MessageContents>
             <TypeSummary num={type.relations.growth.num} />
           </MessageContents>
+        </div>
+        <div className="message">
+          <div className="message-header is-justify-content-center">
+            Relationships with {type.num}
+          </div>
+          <div className="pt-0 px-5 pb-6">
+            <TypeRelationships num={type.num} />
+          </div>
         </div>
       </div>
     </div>
