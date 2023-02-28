@@ -4,16 +4,18 @@ import { currNumAtom } from '../atoms'
 import { types } from '../data/types'
 import { createDiagramLines, createDiagramPoints } from '../util/geometry'
 
-const WIDTH = 360
-const HEIGHT = 200
+const WIDTH = 440
+const HEIGHT = 280
 const RADIUS = 80
 
 const CENTER_X = WIDTH / 2
 const CENTER_Y = HEIGHT / 2
 
 const STROKE_WIDTH = 6
+const FONT_SIZE = 16
 
 const COLOR_INERT = '#DDD'
+const COLOR_INERT_TEXT = '#AAA'
 const COLOR_ACTIVE = '#363636'
 const COLOR_WING = '#3e8ed0'
 const COLOR_STRESS = '#f14668'
@@ -115,13 +117,128 @@ export const Diagram: FC = () => {
                 isActive
                   ? STROKE_WIDTH * 1.25
                   : color === COLOR_INERT
-                  ? STROKE_WIDTH / 2
-                  : STROKE_WIDTH
+                  ? STROKE_WIDTH * 0.5
+                  : STROKE_WIDTH * 1.0
               }
               fill={color}
-              onClick={() => setCurrNum(num)}
-              style={{ cursor: isActive ? 'default' : 'pointer' }}
             />
+          )
+        })}
+        {types.map((type) => {
+          const point = POINTS[type.num - 1]
+          if (!point) throw new Error('Unreachable')
+
+          const fontShift = FONT_SIZE * 1.2
+          let x = point.x
+          let y = point.y
+          let anchor = 'start'
+          switch (type.name) {
+            case 'Reformer': {
+              x += fontShift * 0.5
+              y -= fontShift * 0.5
+              break
+            }
+            case 'Helper': {
+              x += fontShift * 0.8
+              y += fontShift * 0.2
+              break
+            }
+            case 'Achiever': {
+              x += fontShift * 0.75
+              y += fontShift * 0.75
+              break
+            }
+            case 'Individualist': {
+              x += fontShift * 0.1
+              y += fontShift * 1.4
+              break
+            }
+            case 'Investigator': {
+              x -= fontShift * 0.1
+              y += fontShift * 1.4
+              anchor = 'end'
+              break
+            }
+            case 'Loyalist': {
+              x -= fontShift * 0.75
+              y += fontShift * 0.75
+              anchor = 'end'
+              break
+            }
+            case 'Enthusiast': {
+              x -= fontShift * 0.8
+              y += fontShift * 0.2
+              anchor = 'end'
+              break
+            }
+            case 'Challenger': {
+              x -= fontShift * 0.5
+              y -= fontShift * 0.5
+              anchor = 'end'
+              break
+            }
+            case 'Peacemaker': {
+              y -= fontShift * 1.0
+              anchor = 'middle'
+              break
+            }
+          }
+
+          let color = COLOR_INERT_TEXT
+          let fontSize = FONT_SIZE
+          let fontWeight = 'normal'
+          switch (type.num) {
+            case currNum: {
+              color = COLOR_ACTIVE
+              fontSize = FONT_SIZE * 1.25
+              fontWeight = 'bold'
+              break
+            }
+            case wingLNum: {
+              color = COLOR_WING
+              fontSize = FONT_SIZE * 1.05
+              fontWeight = 'bold'
+              break
+            }
+            case wingRNum: {
+              color = COLOR_WING
+              fontSize = FONT_SIZE * 1.05
+              fontWeight = 'bold'
+              break
+            }
+            case stressNum: {
+              color = COLOR_STRESS
+              fontSize = FONT_SIZE * 1.05
+              fontWeight = 'bold'
+              break
+            }
+            case growthNum: {
+              color = COLOR_GROWTH
+              fontSize = FONT_SIZE * 1.05
+              fontWeight = 'bold'
+              break
+            }
+          }
+
+          return (
+            <text
+              key={type.name}
+              x={x}
+              y={y}
+              textAnchor={anchor}
+              fill={color}
+              style={{
+                fontSize: `${fontSize}px`,
+                fontWeight,
+                userSelect: 'none',
+                cursor: 'pointer',
+              }}
+              onClick={() => setCurrNum(type.num)}
+            >
+              {type.num < 5
+                ? `${type.num} ${type.name}`
+                : `${type.name} ${type.num}`}
+            </text>
           )
         })}
       </svg>
