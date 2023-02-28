@@ -145,23 +145,23 @@ export const Diagram: FC = () => {
             }
             case 'Achiever': {
               x += fontShift * 0.9
-              y += fontShift * 0.5
+              y += fontShift * 0.4
               break
             }
             case 'Individualist': {
               x += fontShift * 0.0
-              y += fontShift * 1.5
+              y += fontShift * 1.45
               break
             }
             case 'Investigator': {
               x -= fontShift * 0.0
-              y += fontShift * 1.5
+              y += fontShift * 1.45
               anchor = 'end'
               break
             }
             case 'Loyalist': {
               x -= fontShift * 0.9
-              y += fontShift * 0.5
+              y += fontShift * 0.4
               anchor = 'end'
               break
             }
