@@ -11,12 +11,16 @@ export const TypeSummary: FC<{ num: number }> = ({ num }) => {
   return (
     <div className="content">
       {isCurrent ? (
-        <h2>
-          {type.num}: The {type.name}
+        <h2 style={{ color: 'inherit' }}>
+          {type.num} — The {type.name}
         </h2>
       ) : (
-        <h3 className="is-clickable" onClick={() => setCurrNum(type.num)}>
-          {type.num}: The {type.name}
+        <h3
+          style={{ color: 'inherit' }}
+          className="is-clickable"
+          onClick={() => setCurrNum(type.num)}
+        >
+          {type.num} — The {type.name}
         </h3>
       )}
       <p>
