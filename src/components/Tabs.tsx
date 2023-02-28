@@ -4,7 +4,7 @@ import { FC } from 'react'
 import { currNumAtom } from '../atoms'
 import { types } from '../data/types'
 
-export const Nav: FC = () => {
+export const Tabs: FC = () => {
   const [currNum, setCurrNum] = useAtom(currNumAtom)
   return (
     <div className="tabs is-centered">
