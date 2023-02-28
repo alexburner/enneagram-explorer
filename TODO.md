@@ -1,16 +1,16 @@
 - add more Selected Type content
 
-  - overview
+  - X overview
   - X recommendations
   - X misidentify
   - X relationships
   - addictions?
   - levels
-  - wing descriptions
+  - X wing descriptions
 
 - gapless/overlapping columns?
 
-- add nav geometry
+-X add nav geometry
 
 - mobile column stacking
 
