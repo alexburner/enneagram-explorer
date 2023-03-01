@@ -20,6 +20,6 @@
 
 - patterns.website/enneagram
 
-- attribution
+- X attribution
 
 - X store links
