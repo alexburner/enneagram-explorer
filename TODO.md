@@ -18,8 +18,10 @@
 
 - use url for state/history ?
 
-- patterns.website/enneagram
-
 - X attribution
 
 - X store links
+
+- enneagram.page
+
+- head meta data, img
