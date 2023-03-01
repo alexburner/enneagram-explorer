@@ -15,7 +15,13 @@ interface TypeRelation {
   num: number
 }
 
-interface Type {
+interface TypeDetail {
+  overviewHtml: string
+  addictions: string
+  recommendations: string[]
+}
+
+export interface Type {
   num: number
   name: string
   summary: TypeSummary
@@ -25,11 +31,7 @@ interface Type {
     stress: TypeRelation
     growth: TypeRelation
   }
-  detail: {
-    overviewHtml: string
-    addictions: string
-    recommendations: string[]
-  }
+  detail: TypeDetail
 }
 
 export const types: Type[] = [
