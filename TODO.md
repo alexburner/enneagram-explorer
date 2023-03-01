@@ -25,3 +25,7 @@
 - enneagram.page
 
 - head meta data, img
+
+- expand wing details
+
+- reconsider everything from scratch, with Personality Path
