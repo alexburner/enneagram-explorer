@@ -134,8 +134,8 @@ export const Diagram: FC = () => {
           let anchor = 'start'
           switch (type.name) {
             case 'Reformer': {
-              x += fontShift * 0.6
-              y -= fontShift * 0.4
+              x += fontShift * 0.75
+              y -= fontShift * 0.15
               break
             }
             case 'Helper': {
@@ -172,8 +172,8 @@ export const Diagram: FC = () => {
               break
             }
             case 'Challenger': {
-              x -= fontShift * 0.6
-              y -= fontShift * 0.4
+              x -= fontShift * 0.75
+              y -= fontShift * 0.15
               anchor = 'end'
               break
             }
