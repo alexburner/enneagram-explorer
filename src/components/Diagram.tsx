@@ -191,6 +191,7 @@ export const Diagram: FC = () => {
             case currNum: {
               color = COLOR_ACTIVE
               fontSize = FONT_SIZE * 1.25
+              y += 1 // for larger font
               fontWeight = 'bold'
               break
             }
