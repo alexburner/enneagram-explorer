@@ -23,4 +23,6 @@
 
 - patterns.website/enneagram
 
-- attribution + store links
+- attribution
+
+- X store links
