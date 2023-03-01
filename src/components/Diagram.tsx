@@ -33,14 +33,17 @@ export const Diagram: FC = () => {
   const stressNum = currType.relations.stress.num
   const growthNum = currType.relations.growth.num
   return (
-    <div>
+    <div style={{ position: 'relative', height: `${HEIGHT}px` }}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={WIDTH}
         height={HEIGHT}
         style={{
           display: 'block',
-          margin: 'auto',
+          position: 'absolute',
+          top: '0',
+          left: '50%',
+          transform: 'translateX(-50%)',
         }}
       >
         <circle

@@ -17,7 +17,7 @@
   - https://github.com/jgthms/bulma/issues/475
   - https://jsbin.com/dukihociyu/1/edit?html,css,output
 
-- mobile diagram centering
+- X mobile diagram centering
 
 - use url for state/history ?
 
