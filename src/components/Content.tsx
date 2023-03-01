@@ -12,23 +12,36 @@ export const Content: FC = () => {
   const type = types[currNum - 1]
   if (!type) throw new Error('Unreachable')
   return (
-    <div className="columns is-desktop is-variable is-2">
-      <div className="column">
-        <div className="pb-4" />
-        <WingL type={type} />
-        <Stress type={type} />
-        <Mistypings type={type} />
+    <>
+      {/* Desktop view */}
+      <div className="columns is-desktop is-variable is-2 is-hidden-touch">
+        <div className="column">
+          <div className="pb-4" />
+          <WingL type={type} />
+          <Stress type={type} />
+          <Mistypings type={type} />
+        </div>
+        <div className="column is-two-fifths">
+          <Current type={type} />
+        </div>
+        <div className="column">
+          <div className="pb-4" />
+          <WingR type={type} />
+          <Growth type={type} />
+          <Relationships type={type} />
+        </div>
       </div>
-      <div className="column is-two-fifths">
+      {/* Mobile view */}
+      <div className="is-hidden-desktop">
         <Current type={type} />
-      </div>
-      <div className="column">
-        <div className="pb-4" />
+        <WingL type={type} />
         <WingR type={type} />
+        <Stress type={type} />
         <Growth type={type} />
+        <Mistypings type={type} />
         <Relationships type={type} />
       </div>
-    </div>
+    </>
   )
 }
 
