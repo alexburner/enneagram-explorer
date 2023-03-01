@@ -65,6 +65,22 @@ export const Diagram: FC = () => {
             strokeWidth={STROKE_WIDTH}
           />
         ))}
+        {[growthNum, stressNum].map((num) => {
+          const from = POINTS[currNum - 1]
+          const to = POINTS[num - 1]
+          if (!from || !to) throw new Error('Unreachable')
+          return (
+            <line
+              key={`${from.x},${from.y},${to.x},${to.y}`}
+              x1={from.x}
+              x2={to.x}
+              y1={from.y}
+              y2={to.y}
+              stroke={num === growthNum ? COLOR_GROWTH : COLOR_STRESS}
+              strokeWidth={STROKE_WIDTH}
+            />
+          )
+        })}
         {[wingLNum, wingRNum].map((num, i) => {
           const from = POINTS[currNum - 1]
           const to = POINTS[num - 1]
@@ -78,22 +94,6 @@ export const Diagram: FC = () => {
               stroke={COLOR_WING}
               strokeWidth={STROKE_WIDTH}
               fill="transparent"
-            />
-          )
-        })}
-        {[stressNum, growthNum].map((num) => {
-          const from = POINTS[currNum - 1]
-          const to = POINTS[num - 1]
-          if (!from || !to) throw new Error('Unreachable')
-          return (
-            <line
-              key={`${from.x},${from.y},${to.x},${to.y}`}
-              x1={from.x}
-              x2={to.x}
-              y1={from.y}
-              y2={to.y}
-              stroke={num === growthNum ? COLOR_GROWTH : COLOR_STRESS}
-              strokeWidth={STROKE_WIDTH}
             />
           )
         })}
